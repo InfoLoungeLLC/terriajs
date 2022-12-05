@@ -834,13 +834,13 @@ function GeoJsonMixin<T extends Constructor<Model<GeoJsonTraits>>>(Base: T) {
 
         if (properties?.category == "GOOD") {
           styles["markerUrl"] =
-            "http://localhost:3001/build/TerriaJS/assets/GOOD.png";
+            "http://localhost:3001/build/TerriaJS/assets/GOOD_icon.png";
         } else if (properties?.category == "BAD") {
           styles["markerUrl"] =
-            "http://localhost:3001/build/TerriaJS/assets/BAD.png";
+            "http://localhost:3001/build/TerriaJS/assets/BAD_icon.png";
         } else {
           styles["markerUrl"] =
-            "http://localhost:3001/build/TerriaJS/assets/POSSIBLE.png";
+            "http://localhost:3001/build/TerriaJS/assets/POSSIBLE_icon.png";
         }
 
         if (isDefined(entity.billboard) && isDefined(styles.markerUrl)) {

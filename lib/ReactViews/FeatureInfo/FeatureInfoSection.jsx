@@ -274,21 +274,17 @@ export const FeatureInfoSection = observer(
       const fullName = this.renderDataTitle();
       const reactInfo = getInfoAsReactComponent(this);
       let iconUrl = "";
-      if (reactInfo.properties?.category === "GOOD") {
-        iconUrl =
-          "https://plateauyokohama-development.web.app/images/GOOD_300.png";
-      } else if (reactInfo.properties?.category === "BAD") {
-        iconUrl =
-          "https://plateauyokohama-development.web.app/images/BAD_300.png";
+      if (reactInfo.downloadableData?.category === "GOOD") {
+        iconUrl = "http://localhost:3001/build/TerriaJS/assets/GOOD.png";
+      } else if (reactInfo.downloadableData?.category === "BAD") {
+        iconUrl = "http://localhost:3001/build/TerriaJS/assets/BAD.png";
+      } else if (reactInfo.downloadableData?.category === "POSSIBLE") {
+        iconUrl = "http://localhost:3001/build/TerriaJS/assets/POSSIBLE.png";
       } else {
-        iconUrl =
-          "https://plateauyokohama-development.web.app/images/POSSIBLE_300.png";
+        iconUrl = "";
       }
       return (
         <li className={classNames(Styles.section)}>
-          {/* <If condition={this.props.printView}>
-            <h2>{fullName}</h2>
-          </If> */}
           <If condition={!this.props.printView}>
             <button
               type="button"
